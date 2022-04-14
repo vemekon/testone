@@ -11,18 +11,18 @@ app.get("/", (req, res) => {
 });
 
 const CONNECTION_URL =
-  "mongodb+srv://admin:aa123456@cluster0.qgmjq.mongodb.net/AstonVisit";
+  "mongodb+srv://sam:aa123456@cluster0.1xoi9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const PORT = process.env.PORT || 5000;
 
-// mongoose
-//   .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-//   .then(() =>
-//     app.listen(PORT, () =>
-//       console.log(`Server Running on Port: http://localhost:${PORT}`)
-//     )
-//   )
-//   .catch((error) => console.log(`did not connect`));
+mongoose
+  .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() =>
+    app.listen(PORT, () =>
+      console.log(`Server Running on Port: http://localhost:${PORT}`)
+    )
+  )
+  .catch((error) => console.log(`did not connect`));
 
-app.listen(PORT, () =>
-  console.log(`Server Running on Port: http://localhost:${PORT}`)
-);
+// app.listen(PORT, () =>
+//   console.log(`Server Running on Port: http://localhost:${PORT}`)
+// );
